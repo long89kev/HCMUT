@@ -1,0 +1,388 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-top: 60px; /* Adjust margin to prevent overlapping on desktop */
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+header h1.hero-title {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+header a img {
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+.hero-section {
+    position: relative;
+    height: 400px;
+    background-color: #f0f0f0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-overlay h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.hero-overlay p {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+.hero-overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-overlay li {
+    margin: 0 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.hero-overlay li:hover {
+    background-color: #e0e0e0;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav .icon-maps,
+nav .icon-guide,
+nav .icon-faq {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    font-size: 30px; /* Adjust font size to increase zoom */
+}
+
+.icon-maps, .icon-guide, .icon-faq {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+.navigation {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dfdfdf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.navigation li {
+    display: flex;
+    margin: 0 20px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.navigation li i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.navigation li:hover {
+    background-color: #e0e0e0;
+}
+
+
+main {
+    padding: 20px;
+}
+
+.welcome-message {
+    font-size: 1.5em;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    flex: 0 0 100px;
+    margin-left: 20px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.links {
+    display: flex; /* Switch to flexbox layout */
+    flex-direction: row; /* Arrange links horizontally */
+    justify-content: space-between; /* Distribute links evenly */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 20px;
+  }
+  
+  .links a {
+    font-family: sans-serif;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+
+.links li {
+    margin: 0 20px;
+}
+
+.links li a {
+    color: #333;
+    font-family: sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.links li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.links li a:hover {
+    color: #000;
+}
+
+/* Default styles for larger screens */
+@media (min-width: 992px) {
+    /* Apply styles for larger screens here */
+  }
+  
+  /* Styles for tablets (landscape orientation) */
+  @media (min-width: 768px) and (orientation: landscape) {
+    .navigation {
+      position: static; /* Remove sticky positioning on smaller screens */
+      top: auto;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 10px 0;
+    }
+  
+    .header {
+      margin-top: 0; /* Remove margin on smaller screens */
+    }
+  }
+  
+  /* Styles for tablets (portrait orientation) */
+  @media (min-width: 768px) and (orientation: portrait) {
+    .navigation {
+      display: flex; /* Switch to flexbox layout for tablets */
+      flex-direction: column; /* Arrange links vertically */
+      align-items: center;
+      justify-content: space-between; /* Distribute links evenly */
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 20px;
+    }
+  
+    .links {
+      flex-direction: column; /* Rotate links to vertical orientation */
+    }
+  }
+  
+  /* Styles for phones (landscape orientation) */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .navigation {
+      display: flex; /* Switch to flexbox layout for phones */
+      flex-direction: row; /* Arrange links horizontally */
+      justify-content: space-between; /* Distribute links evenly */
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 20px;
+    }
+  
+    .header {
+      margin-top: 0; /* Remove margin on smaller screens */
+    }
+  }
+  
+  /* Styles for phones (portrait orientation) */
+  @media (max-width: 767px) and (orientation: portrait) {
+    .navigation {
+      position: static; /* Remove sticky positioning on smaller screens */
+      top: auto;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 10px 0;
+    }
+  
+    .header {
+      margin-top: 0; /* Remove margin on smaller screens */
+    }
+  }
+  
+
+
+
+/* General styles */
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Maps section */
+.maps {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.maps h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.maps p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* #map {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+} */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+
+
