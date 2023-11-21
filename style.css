@@ -304,17 +304,13 @@ footer {
   
   /* Styles for phones (landscape orientation) */
   @media (max-width: 767px) and (orientation: landscape) {
-    .navigation {
-      display: flex; /* Switch to flexbox layout for phones */
-      flex-direction: column; /* Arrange links horizontally */
-      justify-content: space-between; /* Distribute links evenly */
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 0 20px;
-        margin-left: 0;
-    }
+      .navigation {
+          position: static; /* Remove sticky positioning on smaller screens */
+          top: auto;
+          background-color: transparent;
+          box-shadow: none;
+          padding: 10px 0;
+      }
   
     .header {
       margin-top: 0; /* Remove margin on smaller screens */
@@ -339,9 +335,6 @@ footer {
       margin-top: 0; /* Remove margin on smaller screens */
     }
   }
-  
-
-
 
 /* General styles */
 body {
