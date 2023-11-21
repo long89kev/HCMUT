@@ -285,20 +285,20 @@ footer {
   
   /* Styles for tablets (portrait orientation) */
   @media (min-width: 768px) and (orientation: portrait) {
-    .navigation {
-      display: flex; /* Switch to flexbox layout for tablets */
-      flex-direction: column; /* Arrange links vertically */
-      align-items: center;
-      justify-content: space-between; /* Distribute links evenly */
-      background-color: #f0f0f0;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 0 20px;
-    }
+      .navigation {
+          display: flex; /* Switch to flexbox layout for phones */
+          flex-direction: column; /* Arrange links horizontally */
+          justify-content: space-between; /* Distribute links evenly */
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin: 0 20px;
+          margin-left: 0;
+      }
   
     .links {
-      flex-direction: column; /* Rotate links to vertical orientation */
+      flex-direction: row; /* Rotate links to vertical orientation */
     }
   }
   
@@ -306,13 +306,14 @@ footer {
   @media (max-width: 767px) and (orientation: landscape) {
     .navigation {
       display: flex; /* Switch to flexbox layout for phones */
-      flex-direction: row; /* Arrange links horizontally */
+      flex-direction: column; /* Arrange links horizontally */
       justify-content: space-between; /* Distribute links evenly */
-      background-color: #f0f0f0;
+      background-color: #ffffff;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin: 0 20px;
+        margin-left: 0;
     }
   
     .header {
@@ -322,13 +323,17 @@ footer {
   
   /* Styles for phones (portrait orientation) */
   @media (max-width: 767px) and (orientation: portrait) {
-    .navigation {
-      position: static; /* Remove sticky positioning on smaller screens */
-      top: auto;
-      background-color: transparent;
-      box-shadow: none;
-      padding: 10px 0;
-    }
+      .navigation {
+          display: flex; /* Switch to flexbox layout for phones */
+          flex-direction: column; /* Arrange links horizontally */
+          justify-content: space-between; /* Distribute links evenly */
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin: 0 20px;
+          margin-left: 0;
+      }
   
     .header {
       margin-top: 0; /* Remove margin on smaller screens */
