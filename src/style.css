@@ -226,20 +226,20 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 0 20px;
-  }
-  
-  .links a {
+}
+
+.links a {
     font-family: sans-serif;
     color: #333;
     font-size: 16px;
     text-decoration: none;
-  }
-  
-  .links a:hover {
+}
+
+.links a:hover {
     color: #000;
     text-decoration: underline;
-  }
-  
+}
+
 
 .links li {
     margin: 0 20px;
@@ -266,75 +266,76 @@ footer {
 /* Default styles for larger screens */
 @media (min-width: 992px) {
     /* Apply styles for larger screens here */
-  }
-  
-  /* Styles for tablets (landscape orientation) */
-  @media (min-width: 768px) and (orientation: landscape) {
+}
+
+/* Styles for tablets (landscape orientation) */
+@media (min-width: 768px) and (orientation: landscape) {
     .navigation {
-      position: static; /* Remove sticky positioning on smaller screens */
-      top: auto;
-      background-color: transparent;
-      box-shadow: none;
-      padding: 10px 0;
+        position: static; /* Remove sticky positioning on smaller screens */
+        top: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px 0;
     }
-  
+
     .header {
-      margin-top: 0; /* Remove margin on smaller screens */
+        margin-top: 0; /* Remove margin on smaller screens */
     }
-  }
-  
-  /* Styles for tablets (portrait orientation) */
-  @media (min-width: 768px) and (orientation: portrait) {
-      .navigation {
-          display: flex; /* Switch to flexbox layout for phones */
-          flex-direction: column; /* Arrange links horizontally */
-          justify-content: space-between; /* Distribute links evenly */
-          background-color: #ffffff;
-          border-radius: 10px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          margin: 0 20px;
-          margin-left: 0;
-      }
-  
+}
+
+/* Styles for tablets (portrait orientation) */
+@media (min-width: 768px) and (orientation: portrait) {
+    .navigation {
+        display: flex; /* Switch to flexbox layout for phones */
+        flex-direction: column; /* Arrange links horizontally */
+        justify-content: space-between; /* Distribute links evenly */
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 0 20px;
+        margin-left: 0;
+    }
+
     .links {
-      flex-direction: row; /* Rotate links to vertical orientation */
+        flex-direction: row; /* Rotate links to vertical orientation */
     }
-  }
-  
-  /* Styles for phones (landscape orientation) */
-  @media (max-width: 767px) and (orientation: landscape) {
-      .navigation {
-          position: static; /* Remove sticky positioning on smaller screens */
-          top: auto;
-          background-color: transparent;
-          box-shadow: none;
-          padding: 10px 0;
-      }
-  
+}
+
+/* Styles for phones (landscape orientation) */
+@media (max-width: 767px) and (orientation: landscape) {
+    .navigation {
+        position: static; /* Remove sticky positioning on smaller screens */
+        top: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px 0;
+    }
+
     .header {
-      margin-top: 0; /* Remove margin on smaller screens */
+        margin-top: 0; /* Remove margin on smaller screens */
     }
-  }
-  
-  /* Styles for phones (portrait orientation) */
-  @media (max-width: 767px) and (orientation: portrait) {
-      .navigation {
-          display: flex; /* Switch to flexbox layout for phones */
-          flex-direction: column; /* Arrange links horizontally */
-          justify-content: space-between; /* Distribute links evenly */
-          background-color: #ffffff;
-          border-radius: 10px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          padding: 20px;
-          margin: 0 20px;
-          margin-left: 0;
-      }
-  
+}
+
+/* Styles for phones (portrait orientation) */
+@media (max-width: 767px) and (orientation: portrait) {
+    .navigation {
+        position: relative;
+        display: flex; /* Switch to flexbox layout for phones */
+        flex-direction: column; /* Arrange links horizontally */
+        justify-content: space-between; /* Distribute links evenly */
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 0 20px;
+        margin-left: 0;
+    }
+
     .header {
-      margin-top: 0; /* Remove margin on smaller screens */
+        margin-top: 0; /* Remove margin on smaller screens */
     }
-  }
+}
 
 /* General styles */
 body {
@@ -368,12 +369,6 @@ a:hover {
     line-height: 1.5;
     margin-bottom: 20px;
 }
-
-/* #map {
-    width: 100%;
-    height: 500px;
-    border: 1px solid #ccc;
-} */
 
 /* Footer */
 footer {
