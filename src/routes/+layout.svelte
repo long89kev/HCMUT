@@ -1,12 +1,12 @@
 <script lang="ts">
     import "../app.css";
-    import { page } from "$app/stores";
+    import { navigating, page } from "$app/stores";
 	import Header from "$lib/component/Header.svelte";
 	import Footer from "$lib/component/Footer.svelte";
     
-    const title = `${$page.data.title ?? "Untitled"} | HCMUT Maps & Guides`;
-    const description = $page.data.description ?? "HCMUT Maps & Guides";
-    const url = `https://hcmut.reimnop.com${$page.url.pathname}`;
+    $: title = `${$page.data.title ?? "Untitled"} | HCMUT Maps & Guides`;
+    $: description = $page.data.description ?? "HCMUT Maps & Guides";
+    $: url = `https://hcmut.reimnop.com${$page.url.pathname}`;
 </script>
 
 <svelte:head>
