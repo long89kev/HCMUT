@@ -3,6 +3,6 @@ import type { PageData } from "$lib/data/PageData";
 export function load(): PageData {
     return {
         title: "Home",
-        description: "This is the home page of HCMUT Maps & Guides"
+        description: "Comprehensive resources for Ho Chi Minh University of Technology students."
     }
 }
