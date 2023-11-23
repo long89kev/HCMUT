@@ -13,7 +13,7 @@
             <img src={Logo} alt="Logo" width="64" height="64" />
         </a>
     </nav>
-    <nav class="my-4 flex items-center justify-between gap-6">
+    <nav class="my-4 flex flex-wrap items-center justify-between gap-6">
         <NavLink href="/" title="Home" />
         <NavLink href="/maps" title="Maps" />
         <NavLink href="/guides" title="Guides" />
