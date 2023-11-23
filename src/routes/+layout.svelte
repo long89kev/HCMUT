@@ -25,7 +25,7 @@
 
 <div class="flex flex-col min-h-screen">
     <Header />
-    <main>
+    <main class="p-4">
         <slot />
     </main>
     <div class="mt-auto">

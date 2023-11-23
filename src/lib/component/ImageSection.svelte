@@ -7,20 +7,16 @@
 
     let clazz = "";
     export { clazz as class };
-
-    let innerWidth = 0;
 </script>
 
-<svelte:window bind:innerWidth={innerWidth} />
-
-<div class="flex items-center gap-16 flex-col md:flex-row {clazz}">
-    <!-- 768 = md in tailwind -->
-    {#if innerWidth < 768}
+<div class="gap-4 {clazz}">
+    <div class="flex flex-col items-center gap-4 md:hidden">
         <img src={src} alt={alt} width={width} height={height} />
         <div class="w-full">
             <slot />
         </div>
-    {:else}
+    </div>
+    <div class="hidden md:flex md:flex-row md:gap-4">
         {#if align === "left"}
             <img src={src} alt={alt} width={width} height={height} />
         {/if}
@@ -30,5 +26,5 @@
         {#if align === "right"}
             <img src={src} alt={alt} width={width} height={height} />
         {/if}
-    {/if}
+    </div>
 </div>
