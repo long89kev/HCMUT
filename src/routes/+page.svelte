@@ -13,19 +13,19 @@
     </ImageSection>
     <ImageSection class="w-full" src={MapMarker} alt="Map marker" width={128} height={128} align="left">
         <a href="/maps" class="underline-offset-4 decoration-2 decoration-primary">
-            <h1 class="text-primary box-decoration-clone bg-clip-text text-transparent w-fit">Maps</h1>
+            <h1 class="text-primary box-decoration-clone bg-clip-text w-fit">Maps</h1>
         </a>
         <p class="text-2xl">Traverse through the extensive facilities of <abbr title="Ho Chi Minh University of Techonology">HCMUT</abbr> with ease.</p>
     </ImageSection>
     <ImageSection class="w-full" src={Book} alt="Book" width={128} height={128} align="left">
         <a href="/guides" class="underline-offset-4 decoration-2 decoration-primary">
-            <h1 class="text-primary box-decoration-clone bg-clip-text text-transparent w-fit">Guides</h1>
+            <h1 class="text-primary box-decoration-clone bg-clip-text w-fit">Guides</h1>
         </a>
         <p class="text-2xl">All the details of <abbr title="Ho Chi Minh University of Techonology">HCMUT</abbr> available at your fingertip.</p>
     </ImageSection>
     <ImageSection class="w-full" src={FrequentlyAskedQuestions} alt="FAQ" width={128} height={128} align="left">
         <a href="/faq" class="underline-offset-4 decoration-2 decoration-primary">
-            <h1 class="text-primary box-decoration-clone bg-clip-text text-transparent w-fit">FAQ</h1>
+            <h1 class="text-primary box-decoration-clone bg-clip-text w-fit">FAQ</h1>
         </a>
         <p class="text-2xl">Have a burning question about us? You will likely find the answer here.</p>
     </ImageSection>
