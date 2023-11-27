@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import { dragscroll } from '@svelte-put/dragscroll';
-	import type { BuildingInfo } from './BuildingInfo';
-	import type { MapPageData } from './MapPageData';
+	import { page } from "$app/stores";
+	import { onMount } from "svelte";
+	import { dragscroll } from "@svelte-put/dragscroll";
+	import type { BuildingInfo } from "./BuildingInfo";
+	import type { MapPageData } from "./MapPageData";
 
 	let namedBuildings: SVGElement;
 
@@ -33,7 +33,7 @@
 				const buildingInfo = buildingInfos.get(child.id);
 
 				// Create a text element
-				const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+				const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
 
 				// Set the text content
 				label.textContent = buildingInfo?.label ?? child.id;
@@ -41,17 +41,17 @@
 				// Set the text position
 				const labelOffsetX = buildingInfo?.labelOffsetX ?? 0.0;
 				const labelOffsetY = buildingInfo?.labelOffsetY ?? 0.0;
-				label.setAttribute('x', `${x + width / 2.0 + labelOffsetX}`);
-				label.setAttribute('y', `${y + height / 2.0 + labelOffsetY}`);
+				label.setAttribute("x", `${x + width / 2.0 + labelOffsetX}`);
+				label.setAttribute("y", `${y + height / 2.0 + labelOffsetY}`);
 
 				// Set the text style
-				label.setAttribute('text-anchor', 'middle');
-				label.setAttribute('dominant-baseline', 'middle');
-				label.setAttribute('font-size', '6px');
-				label.setAttribute('fill', 'white');
+				label.setAttribute("text-anchor", "middle");
+				label.setAttribute("dominant-baseline", "middle");
+				label.setAttribute("font-size", "6px");
+				label.setAttribute("fill", "white");
 
 				// Make text not selectable
-				label.style.pointerEvents = 'none';
+				label.style.pointerEvents = "none";
 
 				// Add the text element to the array
 				labels.push(label);
