@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import Header from '$lib/component/Header.svelte';
 	import Footer from '$lib/component/Footer.svelte';
-	import { fly } from 'svelte/transition';
 
 	$: pathname = $page.url.pathname;
 	$: title = `${$page.data.title ?? 'Untitled'} | HCMUT Maps & Guides`;
@@ -28,11 +27,7 @@
 <div class="flex flex-col min-h-screen">
 	<Header />
 	<main class="p-4">
-		{#key url}
-			<div in:fly={{ y: 150, duration: 150 }}>
-				<slot />
-			</div>
-		{/key}
+		<slot />
 	</main>
 	<div class="mt-auto">
 		<Footer />
