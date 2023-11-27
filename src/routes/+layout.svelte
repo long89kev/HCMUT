@@ -1,6 +1,6 @@
 <script lang="ts">
     import "../app.css";
-    import { navigating, page } from "$app/stores";
+    import { page } from "$app/stores";
 	import Header from "$lib/component/Header.svelte";
 	import Footer from "$lib/component/Footer.svelte";
     
