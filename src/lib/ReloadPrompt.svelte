@@ -24,9 +24,9 @@
 	<div class="fixed w-full p-2 bottom-0">
 		<div class="w-fit mx-auto md:mx-0 md:float-right bg-background rounded-lg border-2 border-neutral p-2" role="alert">
 			{#if $offlineReady}
-				<span>App ready to work offline.</span>
+				<span>App is ready to work offline.</span>
 			{:else}
-				<span>New content available,click on reload button to update.</span>
+				<span>New content is available, click on reload button to update.</span>
 			{/if}
 			<div class="w-full flex justify-end gap-2 mt-2">
 				{#if $needRefresh}
