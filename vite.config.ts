@@ -12,7 +12,13 @@ export default defineConfig({
 				short_name: 'HCMUT Guides',
 				description: 'Comprehensive resources for Ho Chi Minh City University of Technology students.',
 				theme_color: '#1c1917',
+				background_color: '#1c1917',
 				icons: [
+					{
+						src: 'pwa-64x64.png',
+						sizes: '64x64',
+						type: 'image/png'
+					},
 					{
 						src: 'pwa-192x192.png',
 						sizes: '192x192',
