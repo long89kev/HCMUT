@@ -21,7 +21,7 @@
         <a href="/guides" class="underline-offset-4 decoration-2 decoration-primary">
             <h1 class="text-primary box-decoration-clone bg-clip-text w-fit">Guides</h1>
         </a>
-        <p class="text-2xl">All the finest guides of <abbr title="Ho Chi Minh University of Techonology">HCMUT</abbr> available at your fingertip.</p>
+        <p class="text-2xl">All the finest guides of <abbr title="Ho Chi Minh City University of Technology">HCMUT</abbr> available at your fingertip.</p>
     </ImageSection>
     <ImageSection class="w-full" src={FrequentlyAskedQuestions} alt="FAQ" width={128} height={128} align="left">
         <a href="/faq" class="underline-offset-4 decoration-2 decoration-primary">
