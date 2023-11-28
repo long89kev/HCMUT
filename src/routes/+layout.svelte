@@ -6,10 +6,10 @@
 	import Footer from '$lib/component/Footer.svelte';
 
 	$: pathname = $page.url.pathname;
-	$: title = `${$page.data.title ?? 'Untitled'} | HCMUT Maps & Guides`;
-	$: description = $page.data.description ?? 'HCMUT Maps & Guides';
+	$: title = `${$page.data.title ?? 'Untitled'} | HCMUT: Maps & Guides`;
+	$: description = $page.data.description ?? 'HCMUT: Maps & Guides';
 	$: url = `https://hcmut.reimnop.com${pathname}`;
-	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
+	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 </script>
 
 <svelte:head>
@@ -37,3 +37,7 @@
 		<Footer />
 	</div>
 </div>
+
+{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt }}
+	<ReloadPrompt />
+{/await}

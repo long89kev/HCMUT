@@ -6,7 +6,25 @@ export default defineConfig({
 	plugins: [
 		sveltekit(),
 		SvelteKitPWA({
-			srcDir: 'src'
+			srcDir: 'src',
+			manifest: {
+				name: 'HCMUT: Maps & Guides',
+				short_name: 'hcmut-maps-guides',
+				description: 'Comprehensive resources for Ho Chi Minh University of Technology students.',
+				theme_color: '#1c1917',
+				icons: [
+					{
+						src: 'pwa-192x192.png',
+						sizes: '192x192',
+						type: 'image/png'
+					},
+					{
+						src: 'pwa-512x512.png',
+						sizes: '512x512',
+						type: 'image/png'
+					}
+				]
+			}
 		})
 	]
 });
