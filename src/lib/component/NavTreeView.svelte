@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import type { NavTreeNode } from '$lib/data/NavTreeNode';
 
 	export let tree: NavTreeNode;
 
     let expanded = false;
+
+	$: focused = $page.url.pathname === tree.href;
 </script>
 
 <div>
@@ -28,7 +31,7 @@
 
 		<!-- use <a> if href exists -->
 		{#if tree.href}
-			<a class="no-underline px-2 py-1 rounded-lg duration-150 bg-transparent hover:bg-neutral" href={tree.href}>{tree.label}</a>
+			<a class="no-underline px-2 py-1 rounded-lg duration-150 bg-transparent hover:bg-neutral {focused ? "font-bold" : ""}" href={tree.href}>{tree.label}</a>
 		{:else}
 			<p>{tree.label}</p>
 		{/if}

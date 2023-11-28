@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
-	import { dragscroll } from "@svelte-put/dragscroll";
 	import type { BuildingInfo } from "./BuildingInfo";
 	import type { MapPageData } from "./MapPageData";
 
@@ -66,11 +65,8 @@
 </script>
 
 <div class="w-full">
-	<h6 class="text-center my-4">Drag horizontally to pan around map</h6>
-	<div
-		class="mx-auto w-fit max-w-full h-[48rem] overflow-hidden border-neutral border-2 rounded-lg"
-		use:dragscroll
-	>
+	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
+	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
 		<svg
 			class="h-full"
 			viewBox="0 0 641 361"

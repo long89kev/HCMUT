@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import FaqBox from "./FaqBox.svelte";
-
 </script>
+
 <div class="w-full mx-auto max-w-6xl">
     <h1>Frequently asked questions</h1>
     <p>Here are some frequently asked questions about <abbr title="Ho Chi Minh City University of Technology">HCMUT</abbr>.</p>
