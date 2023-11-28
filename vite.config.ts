@@ -9,8 +9,8 @@ export default defineConfig({
 			srcDir: 'src',
 			manifest: {
 				name: 'HCMUT: Maps & Guides',
-				short_name: 'hcmut-maps-guides',
-				description: 'Comprehensive resources for Ho Chi Minh University of Technology students.',
+				short_name: 'HCMUT Guides',
+				description: 'Comprehensive resources for Ho Chi Minh City University of Technology students.',
 				theme_color: '#1c1917',
 				icons: [
 					{
