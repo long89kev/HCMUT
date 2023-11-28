@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { NavTreeNode } from '$lib/data/NavTreeNode';
+	import { onMount } from 'svelte';
 
 	export let tree: NavTreeNode;
-
     let expanded = false;
+	onMount(() => {
+		expanded = tree.expanded ?? false;
+	});
 
 	$: focused = $page.url.pathname === tree.href;
 </script>
@@ -38,7 +41,7 @@
 	</div>
 
 	{#if tree.children && expanded}
-		<div class="ml-6">
+		<div class="ml-4">
 			{#each tree.children as child}
 				<svelte:self tree={child} />
 			{/each}

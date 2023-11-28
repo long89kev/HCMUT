@@ -5,6 +5,7 @@
     const tree: NavTreeNode = {
         label: "Home",
         href: "/guides",
+        expanded: true,
         children: [
             {
                 label: "Navigation",
