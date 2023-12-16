@@ -5,6 +5,7 @@
 	import type { MapPageData } from "./MapPageData";
 
 	let namedBuildings: SVGElement;
+	let currentPosition: GeolocationPosition | undefined;
 
 	function getBuildingInfos(): Map<string, BuildingInfo> {
 		const pageData = $page.data as MapPageData;
@@ -13,6 +14,10 @@
 			buildingInfos.set(building.id, building);
 		}
 		return buildingInfos;
+	}
+
+	function geolocationWatchCallback(position: GeolocationPosition) {
+		currentPosition = position;
 	}
 
 	onMount(() => {
@@ -61,10 +66,18 @@
 		for (const label of labels) {
 			namedBuildings.appendChild(label);
 		}
+
+		// Set up geolocation
+		if (navigator.geolocation) {
+			navigator.geolocation.watchPosition(geolocationWatchCallback);
+		}
 	});
 </script>
 
 <div class="w-full">
+	{#if currentPosition}
+		<p>Your current position is {currentPosition}</p>
+	{/if}
 	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
 		<svg
