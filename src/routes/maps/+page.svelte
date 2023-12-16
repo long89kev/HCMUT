@@ -76,7 +76,10 @@
 
 <div class="w-full">
 	{#if currentPosition}
-		<p>Your current position is {currentPosition}</p>
+		<p class="text-center">
+			Your current position is<br>
+			{currentPosition.coords.longitude} {currentPosition.coords.latitude}<br>
+			accuracy: {currentPosition.coords.accuracy} meters</p>
 	{/if}
 	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
