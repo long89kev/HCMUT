@@ -5,7 +5,7 @@
 	import type { MapPageData } from "./MapPageData";
 
 	let namedBuildings: SVGElement;
-	let currentPosition: GeolocationPosition | undefined;
+	let markerUv: { x: number; y: number } | undefined;
 
 	function getBuildingInfos(): Map<string, BuildingInfo> {
 		const pageData = $page.data as MapPageData;
@@ -17,7 +17,16 @@
 	}
 
 	function geolocationWatchCallback(position: GeolocationPosition) {
-		currentPosition = position;
+		// Calculate the position of the marker based on the current position and these data
+		// u:0.0727848101 v:0.2497652582 10.770562 106.6533694
+		// u:0.2716244726 v:0.8112676056 10.777772 106.6555149
+		// u:0.9456751055 v:0.2413145540 10.776393 106.6628619
+		
+		const u = position.coords.latitude;
+		const v = position.coords.longitude;
+		const markerX = 10.770562 + (u - 0.0727848101) * (10.776393 - 10.770562) / (0.9456751055 - 0.0727848101);
+		const markerY = 106.6533694 + (v - 0.2497652582) * (106.6628619 - 106.6533694) / (0.8112676056 - 0.2497652582);
+		markerUv = { x: markerX, y: markerY };
 	}
 
 	onMount(() => {
@@ -75,14 +84,14 @@
 </script>
 
 <div class="w-full">
-	{#if currentPosition}
-		<p class="text-center">
-			Your current position is<br>
-			{currentPosition.coords.longitude} {currentPosition.coords.latitude}<br>
-			accuracy: {currentPosition.coords.accuracy} meters</p>
-	{/if}
 	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
+		{#if markerUv}
+			<span class="absolute h-4 w-4 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
+				  style="left: {markerUv.x}%; top: {markerUv.y}%">
+				<span class="animate-ping absolute h-full w-full rounded-full bg-sky-500 opacity-75"></span>
+			</span>
+		{/if}
 		<svg
 			class="h-full"
 			viewBox="0 0 641 361"
