@@ -22,21 +22,25 @@
 
 	function geolocationWatchCallback(position: GeolocationPosition) {
 		// Calculate the position of the marker based on the current position and these data
-		// bottom left: 10.769731514552477, 106.65848830148373
-		// top right: 10.77633611287195, 106.6599842507856
-		// bottom right: 10.774335991254821, 106.66229309109201
+		// bottom left: 10.770093009969736, 106.65838075762872
+		// top right: 10.776388335284068, 106.66014856310917
+		// bottom right: 10.77420169331937, 106.66257857733619
 		// Calculate the marker's x and y coordinates
-		const bottomLeft = { latitude: 10.769731514552477, longitude: 106.65848830148373 };
-		const topRight = { latitude: 10.77633611287195, longitude: 106.6599842507856 };
-		const bottomRight = { latitude: 10.774335991254821, longitude: 106.66229309109201 };
+		const bottomLeft = { latitude: 10.770093009969736, longitude: 106.65838075762872 };
+		const topRight = { latitude: 10.776388335284068, longitude: 106.66014856310917 };
+		const bottomRight = { latitude: 10.77420169331937, longitude: 106.66257857733619 };
 		const longitude = position.coords.longitude;
 		const latitude = position.coords.latitude;
 
 		// Calculate the marker's x and y coordinates
-		const markerX = inverseLerp(bottomLeft.latitude, topRight.latitude, latitude) * 100.0;
-		const markerY = inverseLerp(bottomLeft.longitude, bottomRight.longitude, longitude) * 100.0;
+		let markerX = inverseLerp(bottomLeft.latitude, topRight.latitude, latitude);
+		let markerY = inverseLerp(bottomLeft.longitude, bottomRight.longitude, longitude);
 
-		markerUv = { x: markerX, y: markerY };
+		// Offset marker X and Y for accuracy
+		markerX -= 0.022;
+		markerY += 0.165;
+
+		markerUv = { x: markerX * 100.0, y: markerY * 100.0 };
 	}
 
 	onMount(() => {
