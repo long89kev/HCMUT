@@ -1,0 +1,8 @@
+<ul>
+    <li><strong>Ngôi mộ cổ được ngụy trang thành bồn hoa</strong>: Ngôi mộ này nằm đối diện tòa nhà B6, có hình khối vuông, cao khoảng 4 tấc và các cạnh hình vuông dài 2 thước rưỡi. Phía trên cây cỏ lưa thưa, rêu phong bám phủ. Xung quanh ngôi mộ có đặt ghế đá cho sinh viên ngồi nghỉ ngơi, nhưng thường rất ít ai lui tới gần khu vực này.</li>
+    <li><strong>Những lời đồn đại về ngôi mộ</strong>: Người ta cho rằng đây là mộ của một người phu cao su, vì Trường Đại học Bách Khoa xưa kia là rừng cao su bạt ngàn. Có rất nhiều câu chuyện ma rùng rợn về oan hồn phu cao su nửa đêm hiện về oán khóc khắp sân trường. Có thời, nhà trường đã phải dùng biện pháp rất mạnh để ngăn chặn những lời đồn đại hoang đường này.</li>
+    <li><strong>Những lần khai quật mộ bất thành</strong>: Người ta nói rằng, nhà trường đã từng hai lần cố gắng khai quật mộ nhưng đều thất bại. Lần đầu tiên là vào khoảng năm 1956, khi một anh công nhân dùng búa đập mộ thì lăn ra đột tử. Lần thứ hai là sau khi xây trường xong, người ta đã cúng bái, thầy cúng lên đồng để hỏi ý kiến vong hồn, nhưng khi khoan lỗ trên mộ thì một làn khói nâu phun ra và những người hít phải đều bị hóa điên.</li>
+    <li><strong>Câu chuyện về chủ nhân của ngôi mộ</strong>: Theo một cụ già sống gần đó, người nằm dưới ngôi mộ là một thương gia người Hoa, xưa cư trú tại khu Lữ Gia. Sau khi mất, con cháu của ông đã đem thi hài đến nơi này chôn, và để có người theo hầu, họ đã chôn theo một thiếu nữ. Đây là phương cách trấn yểm hết sức độc ác và cổ quái của một số tộc người phương Bắc. Tương truyền linh hồn cô gái sẽ bảo vệ mộ phần của gia chủ.</li>
+</ul>
+<a href="https://vtc.vn/bi-an-ngoi-mo-co-khong-the-pha-trong-truong-dai-hoc-ar149967.html">Sources</a>
+    

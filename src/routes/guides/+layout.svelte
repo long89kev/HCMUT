@@ -14,6 +14,10 @@
             {
                 label: "Traveling",
                 href: "/guides/traveling"
+            },
+            {
+                label:  "Mysteries",
+                href: "/guides/mysteries",
             }
         ]
     };
