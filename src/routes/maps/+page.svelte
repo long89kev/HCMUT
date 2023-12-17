@@ -16,22 +16,25 @@
 		return buildingInfos;
 	}
 
+	function inverseLerp(a: number, b: number, value: number): number {
+		return (value - a) / (b - a);
+	}
+
 	function geolocationWatchCallback(position: GeolocationPosition) {
 		// Calculate the position of the marker based on the current position and these data
 		// bottom left: 10.769731514552477, 106.65848830148373
 		// top right: 10.77633611287195, 106.6599842507856
 		// bottom right: 10.774335991254821, 106.66229309109201
-		
-		const latitude = position.coords.latitude;
-		const longitude = position.coords.longitude;
-		
 		// Calculate the marker's x and y coordinates
 		const bottomLeft = { latitude: 10.769731514552477, longitude: 106.65848830148373 };
 		const topRight = { latitude: 10.77633611287195, longitude: 106.6599842507856 };
 		const bottomRight = { latitude: 10.774335991254821, longitude: 106.66229309109201 };
+		const longitude = position.coords.longitude;
+		const latitude = position.coords.latitude;
 
-		const markerX = (longitude - bottomLeft.longitude) / (bottomRight.longitude - bottomLeft.longitude) * 100;
-		const markerY = (latitude - bottomLeft.latitude) / (topRight.latitude - bottomLeft.latitude) * 100;
+		// Calculate the marker's x and y coordinates
+		const markerX = inverseLerp(bottomLeft.latitude, topRight.latitude, latitude) * 100.0;
+		const markerY = inverseLerp(bottomLeft.longitude, bottomRight.longitude, longitude) * 100.0;
 
 		markerUv = { x: markerX, y: markerY };
 	}
@@ -96,7 +99,7 @@
 <div class="w-full">
 	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
-		<div class="relative h-full">
+		<div class="relative h-full aspect-[641/361]">
 			{#if markerUv}
 				<span class="absolute pointer-events-none h-4 w-4 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
 					  style="left: {markerUv.x}%; top: {markerUv.y}%">
@@ -104,7 +107,7 @@
 				</span>
 				{/if}
 				<svg
-			class="h-full aspect-[641/361]"
+			class="h-full"
 			viewBox="0 0 641 361"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
