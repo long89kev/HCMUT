@@ -18,14 +18,21 @@
 
 	function geolocationWatchCallback(position: GeolocationPosition) {
 		// Calculate the position of the marker based on the current position and these data
-		// u:0.0727848101 v:0.2497652582 10.770562 106.6533694
-		// u:0.2716244726 v:0.8112676056 10.777772 106.6555149
-		// u:0.9456751055 v:0.2413145540 10.776393 106.6628619
+		// bottom left: 10.769731514552477, 106.65848830148373
+		// top right: 10.77633611287195, 106.6599842507856
+		// bottom right: 10.774335991254821, 106.66229309109201
 		
-		const u = position.coords.latitude;
-		const v = position.coords.longitude;
-		const markerX = 10.770562 + (u - 0.0727848101) * (10.776393 - 10.770562) / (0.9456751055 - 0.0727848101);
-		const markerY = 106.6533694 + (v - 0.2497652582) * (106.6628619 - 106.6533694) / (0.8112676056 - 0.2497652582);
+		const latitude = position.coords.latitude;
+		const longitude = position.coords.longitude;
+		
+		// Calculate the marker's x and y coordinates
+		const bottomLeft = { latitude: 10.769731514552477, longitude: 106.65848830148373 };
+		const topRight = { latitude: 10.77633611287195, longitude: 106.6599842507856 };
+		const bottomRight = { latitude: 10.774335991254821, longitude: 106.66229309109201 };
+
+		const markerX = (longitude - bottomLeft.longitude) / (bottomRight.longitude - bottomLeft.longitude) * 100;
+		const markerY = (latitude - bottomLeft.latitude) / (topRight.latitude - bottomLeft.latitude) * 100;
+
 		markerUv = { x: markerX, y: markerY };
 	}
 
@@ -78,7 +85,10 @@
 
 		// Set up geolocation
 		if (navigator.geolocation) {
-			navigator.geolocation.watchPosition(geolocationWatchCallback);
+			const options: PositionOptions = {
+				enableHighAccuracy: true
+			};
+			navigator.geolocation.watchPosition(geolocationWatchCallback, undefined, options);
 		}
 	});
 </script>
@@ -86,14 +96,15 @@
 <div class="w-full">
 	<h6 class="text-center my-4">Scroll horizontally if the entire map is not visible!</h6>
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
-		{#if markerUv}
-			<span class="absolute h-4 w-4 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
-				  style="left: {markerUv.x}%; top: {markerUv.y}%">
-				<span class="animate-ping absolute h-full w-full rounded-full bg-sky-500 opacity-75"></span>
-			</span>
-		{/if}
-		<svg
-			class="h-full"
+		<div class="relative h-full">
+			{#if markerUv}
+				<span class="absolute pointer-events-none h-4 w-4 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
+					  style="left: {markerUv.x}%; top: {markerUv.y}%">
+					<span class="animate-ping absolute h-full w-full rounded-full bg-sky-500 opacity-75"></span>
+				</span>
+				{/if}
+				<svg
+			class="h-full aspect-[641/361]"
 			viewBox="0 0 641 361"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -695,6 +706,8 @@
 				</clipPath>
 			</defs>
 		</svg>
+		</div>
+		
 	</div>
 </div>
 
