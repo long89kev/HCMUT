@@ -4,6 +4,11 @@
 	import type { BuildingInfo } from "./BuildingInfo";
 	import type { MapPageData } from "./MapPageData";
 
+	interface Point {
+		latitude: number;
+		longitude: number;
+	}
+
 	let namedBuildings: SVGElement;
 	let markerUv: { x: number; y: number } | undefined;
 
@@ -16,36 +21,48 @@
 		return buildingInfos;
 	}
 
-	function inverseLerp(a: number, b: number, value: number): number {
-		return (value - a) / (b - a);
+	function geolocationWatchCallback(position: GeolocationPosition) {
+		// Calculate the position of the marker
+		const left: Point = { latitude: 10.770759893361818, longitude: 106.65727095276809 };
+		const right: Point = { latitude: 10.7752994633932, longitude: 106.6614719564377 };
+		const top: Point = { latitude: 10.774268385498292, longitude: 106.65809360788217 };
+		const bottom: Point = { latitude: 10.771946342215454, longitude: 106.66073201051806 };
+
+		// Get current position
+		const currentPosition = position.coords;
+
+		// Calculate the position of the marker
+		const markerX = project(currentPosition, left, right);
+		const markerY = project(currentPosition, top, bottom);
+
+		// Set marker position if it is within the map
+		if (markerX >= 0.0 && markerX <= 1.0 && markerY >= 0.0 && markerY <= 1.0) {
+			markerUv = { x: markerX * 100.0, y: markerY * 100.0 };
+		} else {
+			// Hide the marker if it is outside the map
+			markerUv = undefined;
+		}
 	}
 
-	function geolocationWatchCallback(position: GeolocationPosition) {
-		// Calculate the position of the marker based on the current position and these data
-		// bottom left: 10.770093009969736, 106.65838075762872
-		// top right: 10.776388335284068, 106.66014856310917
-		// bottom right: 10.77420169331937, 106.66257857733619
-		// Calculate the marker's x and y coordinates
-		const bottomLeft = { latitude: 10.770093009969736, longitude: 106.65838075762872 };
-		const topRight = { latitude: 10.776388335284068, longitude: 106.66014856310917 };
-		const bottomRight = { latitude: 10.77420169331937, longitude: 106.66257857733619 };
-		const longitude = position.coords.longitude;
-		const latitude = position.coords.latitude;
+	function project(point: Point, a: Point, b: Point): number {
+		// Get the vector from a to b
+		const ab = { latitude: b.latitude - a.latitude, longtitude: b.longitude - a.longitude };
 
-		// Calculate the marker's x and y coordinates
-		let markerX = inverseLerp(bottomLeft.latitude, topRight.latitude, latitude);
-		let markerY = inverseLerp(bottomLeft.longitude, bottomRight.longitude, longitude);
+		// Get the vector from a to point
+		const ap = { latitude: point.latitude - a.latitude, longtitude: point.longitude - a.longitude };
 
-		// Offset marker X and Y for accuracy
-		markerX -= 0.022;
-		markerY += 0.165;
+		// Calculate the dot product
+		const dot = ab.latitude * ap.latitude + ab.longtitude * ap.longtitude;
 
-		markerUv = { x: markerX * 100.0, y: markerY * 100.0 };
+		// Calculate the length of ab squared
+		const ab2 = ab.latitude * ab.latitude + ab.longtitude * ab.longtitude;
+
+		return dot / ab2;
 	}
 
 	onMount(() => {
 		// Get all building infos
-		const buildingInfos = getBuildingInfos();
+	const buildingInfos = getBuildingInfos();
 
 		// Label all named buildings
 		const labels: SVGElement[] = [];
@@ -105,7 +122,7 @@
 	<div class="mx-auto w-fit max-w-full h-[48rem] overflow-auto border-neutral border-2 rounded-lg">
 		<div class="relative h-full aspect-[641/361]">
 			{#if markerUv}
-				<span class="absolute pointer-events-none h-4 w-4 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
+				<span class="absolute pointer-events-none h-3 w-3 -translate-x-[50%] -translate-y-[50%] rounded-full bg-sky-400 opacity-75"
 					  style="left: {markerUv.x}%; top: {markerUv.y}%">
 					<span class="animate-ping absolute h-full w-full rounded-full bg-sky-500 opacity-75"></span>
 				</span>
